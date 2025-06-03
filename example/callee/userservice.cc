@@ -1,6 +1,7 @@
 #include <iostream>
-#include "../user.pb.h"
-
+#include "user.pb.h"
+#include "mprpcapplication.h"
+#include "rpcprovider.h"
 using namespace std;
 
 class UserService:public fixbug::UserServiceRpc{ //rpc发布端（生产者）rpc服务提供者 
@@ -33,3 +34,14 @@ public:
         done->Run();
     }
 };
+
+int main(int argc,char **argv)
+{
+    //初始化rpc框架
+    MprpcApplication::Init(argc,argv);
+    //provider是一个网络服务对象，把要发布的UserService对象发布到RPC节点上
+    RpcProvider provider;
+    provider.NotifyService(new UserService());
+    //运行服务，阻塞等待远程的rpc请求调用
+    provider.Run();
+}
