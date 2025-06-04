@@ -1,5 +1,8 @@
 /home/lee/cpp/mrrpc/build/CMakeFiles/edit_cache.dir
 /home/lee/cpp/mrrpc/build/CMakeFiles/rebuild_cache.dir
+/home/lee/cpp/mrrpc/build/src/CMakeFiles/mprpc.dir
+/home/lee/cpp/mrrpc/build/src/CMakeFiles/edit_cache.dir
+/home/lee/cpp/mrrpc/build/src/CMakeFiles/rebuild_cache.dir
 /home/lee/cpp/mrrpc/build/example/CMakeFiles/edit_cache.dir
 /home/lee/cpp/mrrpc/build/example/CMakeFiles/rebuild_cache.dir
 /home/lee/cpp/mrrpc/build/example/callee/CMakeFiles/provider.dir

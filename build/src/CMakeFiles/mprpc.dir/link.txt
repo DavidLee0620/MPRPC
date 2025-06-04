@@ -1,0 +1,1 @@
+/usr/bin/g++ -fPIC -g -shared -Wl,-soname,libmprpc.so -o /home/lee/cpp/mrrpc/lib/libmprpc.so CMakeFiles/mprpc.dir/mprpcapplicaton.cc.o CMakeFiles/mprpc.dir/mprpcconfig.cc.o CMakeFiles/mprpc.dir/rpcprovider.cc.o   -L/home/lee/cpp/mrrpc/lib 

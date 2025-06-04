@@ -44,6 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
+  include("/home/lee/cpp/mrrpc/build/src/cmake_install.cmake")
   include("/home/lee/cpp/mrrpc/build/example/cmake_install.cmake")
 
 endif()
