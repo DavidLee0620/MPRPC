@@ -108,7 +108,7 @@ provider_EXTERNAL_OBJECTS =
 /home/lee/cpp/mrrpc/bin/provider: example/callee/CMakeFiles/provider.dir/userservice.cc.o
 /home/lee/cpp/mrrpc/bin/provider: example/callee/CMakeFiles/provider.dir/__/user.pb.cc.o
 /home/lee/cpp/mrrpc/bin/provider: example/callee/CMakeFiles/provider.dir/build.make
-/home/lee/cpp/mrrpc/bin/provider: /home/lee/cpp/mrrpc/lib/libmprpc.so
+/home/lee/cpp/mrrpc/bin/provider: /home/lee/cpp/mrrpc/lib/libmprpc.a
 /home/lee/cpp/mrrpc/bin/provider: example/callee/CMakeFiles/provider.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lee/cpp/mrrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/lee/cpp/mrrpc/bin/provider"
 	cd /home/lee/cpp/mrrpc/build/example/callee && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/provider.dir/link.txt --verbose=$(VERBOSE)

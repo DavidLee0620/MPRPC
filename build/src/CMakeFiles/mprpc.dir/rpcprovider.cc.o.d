@@ -311,4 +311,9 @@ src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: \
  /usr/include/boost/type_traits/add_reference.hpp \
  /usr/include/boost/utility/enable_if.hpp \
  /usr/include/boost/core/enable_if.hpp \
- /usr/include/boost/type_traits/is_same.hpp
+ /usr/include/boost/type_traits/is_same.hpp \
+ /usr/include/muduo/net/EventLoop.h /usr/include/c++/11/atomic \
+ /usr/include/muduo/base/Mutex.h /usr/include/muduo/base/CurrentThread.h \
+ /usr/include/muduo/net/TimerId.h \
+ /home/lee/cpp/mrrpc/src/include/mprpcapplication.h \
+ /home/lee/cpp/mrrpc/src/include/mprpcconfig.h

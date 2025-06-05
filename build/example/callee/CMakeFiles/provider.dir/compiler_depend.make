@@ -777,8 +777,18 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: /home/lee/cpp/mrrpc/exa
   /usr/include/boost/type_traits/add_reference.hpp \
   /usr/include/boost/utility/enable_if.hpp \
   /usr/include/boost/core/enable_if.hpp \
-  /usr/include/boost/type_traits/is_same.hpp
+  /usr/include/boost/type_traits/is_same.hpp \
+  /usr/include/muduo/net/EventLoop.h \
+  /usr/include/muduo/base/Mutex.h \
+  /usr/include/muduo/base/CurrentThread.h \
+  /usr/include/muduo/net/TimerId.h
 
+
+/usr/include/muduo/base/CurrentThread.h:
+
+/usr/include/muduo/base/Mutex.h:
+
+/usr/include/muduo/net/EventLoop.h:
 
 /usr/include/boost/type_traits/is_same.hpp:
 
@@ -1083,6 +1093,8 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: /home/lee/cpp/mrrpc/exa
 /usr/include/google/protobuf/stubs/port.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+
+/usr/include/muduo/net/TimerId.h:
 
 /usr/include/c++/11/bits/refwrap.h:
 
