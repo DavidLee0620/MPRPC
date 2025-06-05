@@ -127,13 +127,25 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr& conn,muduo::net:
         return;
     }
     //给下面的method绑定一个Closure回调
-    google::protobuf::NewCallback();
+    google::protobuf::Closure *done=google::protobuf::NewCallback<RpcProvider,const muduo::net::TcpConnectionPtr&,google::protobuf::Message*>(this,&RpcProvider::SendRpcResponse,conn,response);
     //根据远程调用的rpc请求，调用当前的rpc发布的方法
     //UserService.Login(controller,request,respones,done)
-    service->CallMethod(method,nullptr,request,response,);
+    service->CallMethod(method,nullptr,request,response,done);
 }
-
-void RpcProvider::SendRpcResponse(const muduo::net::TcpConnectionPtr&,google::protobuf::Message*)
+//done.run()会回调这个绑定的函数
+void RpcProvider::SendRpcResponse(const muduo::net::TcpConnectionPtr& conn,google::protobuf::Message* response)
 {
+    //response序列化
+    string response_str;
+    if(response->SerializeToString(&response_str))
+    {
+        //序列化成功后，通过网络发送响应
+        conn->send(response_str);
+    }
+    else
+    {
+        cout<<"Serialize response error!"<<endl;
+    }
+    conn->shutdown();//模拟http短连接服务，回复响应后断开连接，以便提供更多的连接
 
 }

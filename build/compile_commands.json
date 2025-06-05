@@ -13,9 +13,21 @@
 },
 {
   "directory": "/home/lee/cpp/mrrpc/build/src",
+  "command": "/usr/bin/g++  -I/home/lee/cpp/mrrpc/src/include -I/home/lee/cpp/mrrpc/example -g -o CMakeFiles/mprpc.dir/rpcheader.pb.cc.o -c /home/lee/cpp/mrrpc/src/rpcheader.pb.cc",
+  "file": "/home/lee/cpp/mrrpc/src/rpcheader.pb.cc",
+  "output": "src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.o"
+},
+{
+  "directory": "/home/lee/cpp/mrrpc/build/src",
   "command": "/usr/bin/g++  -I/home/lee/cpp/mrrpc/src/include -I/home/lee/cpp/mrrpc/example -g -o CMakeFiles/mprpc.dir/rpcprovider.cc.o -c /home/lee/cpp/mrrpc/src/rpcprovider.cc",
   "file": "/home/lee/cpp/mrrpc/src/rpcprovider.cc",
   "output": "src/CMakeFiles/mprpc.dir/rpcprovider.cc.o"
+},
+{
+  "directory": "/home/lee/cpp/mrrpc/build/src",
+  "command": "/usr/bin/g++  -I/home/lee/cpp/mrrpc/src/include -I/home/lee/cpp/mrrpc/example -g -o CMakeFiles/mprpc.dir/mprpcchannel.cc.o -c /home/lee/cpp/mrrpc/src/mprpcchannel.cc",
+  "file": "/home/lee/cpp/mrrpc/src/mprpcchannel.cc",
+  "output": "src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o"
 },
 {
   "directory": "/home/lee/cpp/mrrpc/build/example/callee",
