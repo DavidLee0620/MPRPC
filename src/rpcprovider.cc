@@ -1,12 +1,32 @@
 #include "rpcprovider.h"
 #include "mprpcapplication.h"
 #include <functional>
+
 using namespace std;
 
-
+/*
+service_name ==> service_desc描述 ===> 多个method_name ===> 获取对应的method_desc描述
+*/
 //框架提供的可以发布rpc服务的函数接口，需要保持抽象性，不能写死特定的类
 void RpcProvider::NotifyService(google::protobuf::Service *service)
 {
+    ServiceInfo service_info;
+    //获取服务对象的描述信息
+    const google::protobuf::ServiceDescriptor *pserviceDesc=service->GetDescriptor();
+    string service_name=pserviceDesc->name();
+    int methodCnt=pserviceDesc->method_count();
+    cout<<"service name: "<<service_name<<endl;
+    //获取服务对象指定下标的服务方法的描述 例如通过service->method->method_name->匹配到Login函数
+    for(int i=0;i<methodCnt;i++)
+    {
+        const google::protobuf::MethodDescriptor* pmethodDesc=pserviceDesc->method(i);
+        string method_name=pmethodDesc->name();
+        cout<<"method name: "<<method_name<<endl;
+        service_info.m_methodMap.insert({method_name,pmethodDesc}); 
+
+    }
+    service_info.m_service=service;
+    m_serviceMap.insert({service_name,service_info});
 
 }
 
