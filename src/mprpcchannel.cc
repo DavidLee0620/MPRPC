@@ -4,6 +4,9 @@
 #include <sys/types.h>          /* See NOTES */
 #include <sys/socket.h>
 #include <errno.h>
+#include "mprpcapplication.h"
+#include <arpa/inet.h>
+#include <netinet/in.h>
 using namespace std;
 /*
 header_size+service_name method_name args_size+args_str
@@ -65,5 +68,43 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         cout<<"create client socket errno: "<<errno<<endl;
         exit(EXIT_FAILURE);
     }
-    
+    string ip=MprpcApplication::GetInstance().GetConfig().Load("rpcserverip");
+    uint16_t port=atoi(MprpcApplication::GetInstance().GetConfig().Load("rpcserverport").c_str());
+
+    struct sockaddr_in server_addr;
+    server_addr.sin_family=AF_INET;
+    server_addr.sin_port=htons(port);
+    server_addr.sin_addr.s_addr=inet_addr(ip.c_str());
+    //连接服务
+    if(connect(clientfd,(struct sockaddr*)&server_addr,sizeof(server_addr))==-1)
+    {
+        close(clientfd);
+        cout<<"connect errno: "<<errno<<endl;
+        exit(EXIT_FAILURE);
+    }
+    //发送数据
+    if(send(clientfd,send_rpc_str.c_str(),send_rpc_str.size(),0)==-1)
+    {
+        close(clientfd);
+        cout<<"send errno: "<<errno<<endl;
+        return;
+    }
+    //接收响应
+    char buf[1024]={0};
+    int recv_size=0;
+    if((recv_size==recv(clientfd,buf,1024,0))==-1)
+    {
+        close(clientfd);
+        cout<<"recv errno: "<<errno<<endl;
+        return;
+    }   
+    //将响应反序列化
+    string response_str(buf,0,recv_size);
+    if(!(response->ParseFromString(response_str)))
+    {
+        cout<<"Parse response error! response_str: "<<response_str<<endl;
+        close(clientfd);
+        return;
+    }
+    close(clientfd);
 }
