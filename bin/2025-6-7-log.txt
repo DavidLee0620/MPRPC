@@ -5,3 +5,13 @@
 16:53:4 =>[info] service name: UserServiceRpc
 16:53:4 =>[info] method name: Login
 16:53:4 =>[info] method name: Register
+22:53:43 =>[error] first log message!
+22:53:43 =>[error] /home/lee/cpp/mrrpc/example/callee/userservice.cc:main:68
+22:53:43 =>[info] service name: UserServiceRpc
+22:53:43 =>[info] method name: Login
+22:53:43 =>[info] method name: Register
+23:12:53 =>[error] first log message!
+23:12:53 =>[info] /home/lee/cpp/mrrpc/example/callee/userservice.cc:main:68
+23:12:53 =>[info] service name: UserServiceRpc
+23:12:53 =>[info] method name: Login
+23:12:53 =>[info] method name: Register

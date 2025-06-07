@@ -2205,7 +2205,16 @@ src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: /home/lee/cpp/mrrpc/src/rpcprovider.c
   /usr/include/c++/11/thread \
   /usr/include/c++/11/bits/std_thread.h \
   /usr/include/c++/11/bits/this_thread_sleep.h \
-  /usr/include/c++/11/condition_variable
+  /usr/include/c++/11/condition_variable \
+  /home/lee/cpp/mrrpc/src/include/zookeeperutil.h \
+  /usr/local/include/zookeeper/zookeeper.h \
+  /usr/include/x86_64-linux-gnu/sys/time.h \
+  /usr/local/include/zookeeper/proto.h \
+  /usr/local/include/zookeeper/zookeeper_version.h \
+  /usr/local/include/zookeeper/recordio.h \
+  /usr/local/include/zookeeper/zookeeper.jute.h \
+  /usr/include/semaphore.h \
+  /usr/include/x86_64-linux-gnu/bits/semaphore.h
 
 src/CMakeFiles/mprpc.dir/zookeeperutil.cc.o: /home/lee/cpp/mrrpc/src/zookeeperutil.cc \
   /usr/include/stdc-predef.h \

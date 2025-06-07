@@ -3,6 +3,7 @@
 #include <functional>
 #include "rpcheader.pb.h"
 #include "logger.h"
+#include "zookeeperutil.h"
 using namespace std;
 
 /*
@@ -46,7 +47,24 @@ void RpcProvider::Run()
     server.setMessageCallback(bind(&RpcProvider::OnMessage,this,placeholders::_1,placeholders::_2,placeholders::_3));
     //设置muduo库的线程数,1个为IO线程读取，剩下7个为工作线程，Reactor模型，；epoll+线程池
     server.setThreadNum(8);
-
+    //把rpc要发布的服务全部注册到zk中，让rpc_client可以发现服务
+    zkClient zkCli;
+    zkCli.start();//zkclient通过网络IO线程，每1/3timeout下发送一次ping作为心跳
+    //service_name永久节点，method_name临时节点
+    for(auto& sp:m_serviceMap)
+    {
+        // 服务节点/service_name
+        string service_path="/"+sp.first;
+        zkCli.Create(service_path.c_str(),nullptr,0);
+        for(auto& mp:sp.second.m_methodMap)
+        {
+            // 方法节点/service_name/method_name
+            string method_path=service_path+"/"+mp.first;
+            char method_path_data[128]={0};
+            sprintf(method_path_data,"%s:%d",ip.c_str(),port);
+            zkCli.Create(method_path.c_str(),method_path_data,strlen(method_path_data),ZOO_EPHEMERAL);
+        }
+    }
     cout<<"RpcProvider start service at ip:"<<ip<<" port:"<<port<<endl;
     //启动网络服务
     server.start();
