@@ -13,6 +13,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.26.4/CMakeSystem.cmake"
   "/home/lee/cpp/mrrpc/example/CMakeLists.txt"
   "/home/lee/cpp/mrrpc/example/callee/CMakeLists.txt"
+  "/home/lee/cpp/mrrpc/example/caller/CMakeLists.txt"
   "/home/lee/cpp/mrrpc/src/CMakeLists.txt"
   "/opt/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CMakeCInformation.cmake"
   "/opt/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake"
@@ -45,10 +46,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "example/CMakeFiles/CMakeDirectoryInformation.cmake"
   "example/callee/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "example/caller/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/mprpc.dir/DependInfo.cmake"
   "example/callee/CMakeFiles/provider.dir/DependInfo.cmake"
+  "example/caller/CMakeFiles/consumer.dir/DependInfo.cmake"
   )

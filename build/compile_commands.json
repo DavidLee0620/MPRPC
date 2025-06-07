@@ -30,6 +30,12 @@
   "output": "src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o"
 },
 {
+  "directory": "/home/lee/cpp/mrrpc/build/src",
+  "command": "/usr/bin/g++  -I/home/lee/cpp/mrrpc/src/include -I/home/lee/cpp/mrrpc/example -g -o CMakeFiles/mprpc.dir/mprpccontroller.cc.o -c /home/lee/cpp/mrrpc/src/mprpccontroller.cc",
+  "file": "/home/lee/cpp/mrrpc/src/mprpccontroller.cc",
+  "output": "src/CMakeFiles/mprpc.dir/mprpccontroller.cc.o"
+},
+{
   "directory": "/home/lee/cpp/mrrpc/build/example/callee",
   "command": "/usr/bin/g++  -I/home/lee/cpp/mrrpc/src/include -I/home/lee/cpp/mrrpc/example -g -o CMakeFiles/provider.dir/userservice.cc.o -c /home/lee/cpp/mrrpc/example/callee/userservice.cc",
   "file": "/home/lee/cpp/mrrpc/example/callee/userservice.cc",
@@ -40,5 +46,17 @@
   "command": "/usr/bin/g++  -I/home/lee/cpp/mrrpc/src/include -I/home/lee/cpp/mrrpc/example -g -o CMakeFiles/provider.dir/__/user.pb.cc.o -c /home/lee/cpp/mrrpc/example/user.pb.cc",
   "file": "/home/lee/cpp/mrrpc/example/user.pb.cc",
   "output": "example/callee/CMakeFiles/provider.dir/__/user.pb.cc.o"
+},
+{
+  "directory": "/home/lee/cpp/mrrpc/build/example/caller",
+  "command": "/usr/bin/g++  -I/home/lee/cpp/mrrpc/src/include -I/home/lee/cpp/mrrpc/example -g -o CMakeFiles/consumer.dir/callerservice.cc.o -c /home/lee/cpp/mrrpc/example/caller/callerservice.cc",
+  "file": "/home/lee/cpp/mrrpc/example/caller/callerservice.cc",
+  "output": "example/caller/CMakeFiles/consumer.dir/callerservice.cc.o"
+},
+{
+  "directory": "/home/lee/cpp/mrrpc/build/example/caller",
+  "command": "/usr/bin/g++  -I/home/lee/cpp/mrrpc/src/include -I/home/lee/cpp/mrrpc/example -g -o CMakeFiles/consumer.dir/__/user.pb.cc.o -c /home/lee/cpp/mrrpc/example/user.pb.cc",
+  "file": "/home/lee/cpp/mrrpc/example/user.pb.cc",
+  "output": "example/caller/CMakeFiles/consumer.dir/__/user.pb.cc.o"
 }
 ]

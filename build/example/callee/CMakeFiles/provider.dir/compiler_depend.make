@@ -694,6 +694,8 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: /home/lee/cpp/mrrpc/exa
   /usr/include/google/protobuf/service.h \
   /home/lee/cpp/mrrpc/src/include/mprpcapplication.h \
   /home/lee/cpp/mrrpc/src/include/mprpcconfig.h \
+  /home/lee/cpp/mrrpc/src/include/mprpcchannel.h \
+  /home/lee/cpp/mrrpc/src/include/mprpccontroller.h \
   /home/lee/cpp/mrrpc/src/include/rpcprovider.h \
   /usr/include/muduo/net/TcpServer.h \
   /usr/include/muduo/base/Atomic.h \
@@ -917,6 +919,10 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: /home/lee/cpp/mrrpc/exa
 /usr/include/c++/11/istream:
 
 /usr/include/boost/detail/workaround.hpp:
+
+/usr/include/boost/exception/exception.hpp:
+
+/usr/include/x86_64-linux-gnu/asm/socket.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
@@ -1308,12 +1314,6 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: /home/lee/cpp/mrrpc/exa
 
 /usr/include/c++/11/unordered_set:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/include/google/protobuf/io/coded_stream.h:
-
-/usr/include/c++/11/bits/std_mutex.h:
-
 /usr/include/c++/11/bits/predefined_ops.h:
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
@@ -1333,6 +1333,14 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: /home/lee/cpp/mrrpc/exa
 /usr/include/x86_64-linux-gnu/bits/signal_ext.h:
 
 /usr/include/linux/param.h:
+
+/usr/include/boost/cstdint.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/param.h:
 
 /usr/include/c++/11/bits/parse_numbers.h:
 
@@ -1462,6 +1470,8 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: /home/lee/cpp/mrrpc/exa
 
 /usr/include/c++/11/stdlib.h:
 
+/home/lee/cpp/mrrpc/src/include/mprpccontroller.h:
+
 /usr/include/google/protobuf/stubs/platform_macros.h:
 
 /usr/include/byteswap.h:
@@ -1520,14 +1530,6 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: /home/lee/cpp/mrrpc/exa
 
 /usr/include/google/protobuf/generated_message_util.h:
 
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
-/usr/include/x86_64-linux-gnu/bits/param.h:
-
-/usr/include/boost/cstdint.hpp:
-
 /usr/include/c++/11/bits/allocator.h:
 
 /usr/include/google/protobuf/stubs/strutil.h:
@@ -1547,10 +1549,6 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: /home/lee/cpp/mrrpc/exa
 /usr/include/c++/11/bits/allocated_ptr.h:
 
 /usr/include/google/protobuf/stubs/callback.h:
-
-/usr/include/x86_64-linux-gnu/asm/socket.h:
-
-/usr/include/boost/exception/exception.hpp:
 
 /usr/include/google/protobuf/stubs/stl_util.h:
 
@@ -1575,6 +1573,22 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: /home/lee/cpp/mrrpc/exa
 /home/lee/cpp/mrrpc/src/include/mprpcapplication.h:
 
 /home/lee/cpp/mrrpc/src/include/mprpcconfig.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/google/protobuf/io/coded_stream.h:
+
+/usr/include/c++/11/bits/std_mutex.h:
+
+/home/lee/cpp/mrrpc/src/include/mprpcchannel.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/c++/11/bits/basic_ios.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
 
 /home/lee/cpp/mrrpc/src/include/rpcprovider.h:
 
@@ -1635,14 +1649,6 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: /home/lee/cpp/mrrpc/exa
 /usr/include/boost/container_hash/hash_fwd.hpp:
 
 /usr/include/x86_64-linux-gnu/asm/sockios.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-
-/usr/include/c++/11/bits/basic_ios.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
 
 /usr/include/features.h:
 

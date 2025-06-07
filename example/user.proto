@@ -17,8 +17,20 @@ message LoginResponse
     ResultCode result=1;
     bool success=2;
 }
+message RegisterRequest
+{
+    bytes name=1;
+    bytes pwd=2;
+    uint32 id=3;
 
+}
+message RegisterResponse
+{
+    ResultCode result=1;
+    bool success=2;
+}
 service UserServiceRpc
 {
     rpc Login(LoginRequest) returns(LoginResponse);
+    rpc Register(RegisterRequest) returns(RegisterResponse);
 }

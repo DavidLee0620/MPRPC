@@ -283,6 +283,8 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: \
  /usr/include/google/protobuf/service.h \
  /home/lee/cpp/mrrpc/src/include/mprpcapplication.h \
  /home/lee/cpp/mrrpc/src/include/mprpcconfig.h \
+ /home/lee/cpp/mrrpc/src/include/mprpcchannel.h \
+ /home/lee/cpp/mrrpc/src/include/mprpccontroller.h \
  /home/lee/cpp/mrrpc/src/include/rpcprovider.h \
  /usr/include/muduo/net/TcpServer.h /usr/include/muduo/base/Atomic.h \
  /usr/include/muduo/base/noncopyable.h /usr/include/muduo/base/Types.h \

@@ -7,6 +7,7 @@
 #include "mprpcapplication.h"
 #include <arpa/inet.h>
 #include <netinet/in.h>
+
 using namespace std;
 /*
 header_size+service_name method_name args_size+args_str
@@ -16,6 +17,7 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
                           google::protobuf::RpcController* controller, const google::protobuf::Message* request,
                           google::protobuf::Message* response, google::protobuf::Closure* done)
 {
+
     const google::protobuf::ServiceDescriptor* sd=method->service();
     string service_name=sd->name();
     string method_name=method->name();
@@ -28,7 +30,7 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     }
     else
     {
-        cout<<"Serialize request err!"<<endl;
+        controller->SetFailed("Serialize request err!");
         return;
     }
     //获取定义数据格式中的数据
@@ -45,7 +47,7 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     }
     else
     {
-        cout<<"Serialize rpcHeader err!"<<endl;
+        controller->SetFailed("Serialize rpcHeader err!");
         return;
     }
     //组织带发送的rpc请求的数据字符串
@@ -65,8 +67,10 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     int clientfd=socket(AF_INET,SOCK_STREAM,0);
     if(clientfd==-1)
     {
-        cout<<"create client socket errno: "<<errno<<endl;
-        exit(EXIT_FAILURE);
+        char buf[512]={0};
+        sprintf(buf,"create client socket errno:%d",errno);
+        controller->SetFailed(buf);
+        return;
     }
     string ip=MprpcApplication::GetInstance().GetConfig().Load("rpcserverip");
     uint16_t port=atoi(MprpcApplication::GetInstance().GetConfig().Load("rpcserverport").c_str());
@@ -79,31 +83,41 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     if(connect(clientfd,(struct sockaddr*)&server_addr,sizeof(server_addr))==-1)
     {
         close(clientfd);
-        cout<<"connect errno: "<<errno<<endl;
-        exit(EXIT_FAILURE);
+        char buf[512]={0};
+        sprintf(buf,"connect client socket errno:%d",errno);
+        controller->SetFailed(buf);
+        return;
     }
     //发送数据
     if(send(clientfd,send_rpc_str.c_str(),send_rpc_str.size(),0)==-1)
     {
         close(clientfd);
-        cout<<"send errno: "<<errno<<endl;
+        char buf[512]={0};
+        sprintf(buf,"send errno:%d",errno);
+        controller->SetFailed(buf);
         return;
     }
     //接收响应
-    char buf[1024]={0};
+    char recv_buf[1024]={0};
     int recv_size=0;
-    if((recv_size==recv(clientfd,buf,1024,0))==-1)
+    if((recv_size=recv(clientfd,recv_buf,1024,0))==-1)
     {
         close(clientfd);
-        cout<<"recv errno: "<<errno<<endl;
+        char buf[512]={0};
+        sprintf(buf,"recv errno:%d",errno);
+        controller->SetFailed(buf);
         return;
     }   
     //将响应反序列化
-    string response_str(buf,0,recv_size);
-    if(!(response->ParseFromString(response_str)))
+    //string response_str(buf,0,recv_size);//出现bug，遇到\0结束，导致反序列化失败
+
+    //if(!(response->ParseFromString(response_str)))
+    if(!response->ParseFromArray(recv_buf,recv_size))
     {
-        cout<<"Parse response error! response_str: "<<response_str<<endl;
         close(clientfd);
+        char buf[512]={0};
+        sprintf(buf,"Parse response error! response_str:%s",recv_buf);
+        controller->SetFailed(buf);
         return;
     }
     close(clientfd);

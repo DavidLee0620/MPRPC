@@ -304,5 +304,7 @@ src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: \
  /usr/include/asm-generic/sockios.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
  /home/lee/cpp/mrrpc/src/include/mprpcapplication.h \
- /home/lee/cpp/mrrpc/src/include/mprpcconfig.h /usr/include/arpa/inet.h \
- /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/bits/in.h
+ /home/lee/cpp/mrrpc/src/include/mprpcconfig.h \
+ /home/lee/cpp/mrrpc/src/include/mprpccontroller.h \
+ /usr/include/arpa/inet.h /usr/include/netinet/in.h \
+ /usr/include/x86_64-linux-gnu/bits/in.h

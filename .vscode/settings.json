@@ -5,6 +5,7 @@
         "unordered_map": "cpp",
         "functional": "cpp",
         "typeindex": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "*.inc": "cpp"
     }
 }

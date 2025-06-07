@@ -1,5 +1,7 @@
 #pragma once
 #include "mprpcconfig.h"
+#include "mprpcchannel.h"
+#include "mprpccontroller.h"
 //框架的基础类,使用单例模式，全局共用一个基础类
 class MprpcApplication
 {
