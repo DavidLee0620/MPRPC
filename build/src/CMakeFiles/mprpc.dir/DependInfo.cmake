@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/lee/cpp/mrrpc/src/logger.cc" "src/CMakeFiles/mprpc.dir/logger.cc.o" "gcc" "src/CMakeFiles/mprpc.dir/logger.cc.o.d"
   "/home/lee/cpp/mrrpc/src/mprpcapplicaton.cc" "src/CMakeFiles/mprpc.dir/mprpcapplicaton.cc.o" "gcc" "src/CMakeFiles/mprpc.dir/mprpcapplicaton.cc.o.d"
   "/home/lee/cpp/mrrpc/src/mprpcchannel.cc" "src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o" "gcc" "src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o.d"
   "/home/lee/cpp/mrrpc/src/mprpcconfig.cc" "src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o" "gcc" "src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o.d"

@@ -1,0 +1,7 @@
+16:44:59 => first log message!
+16:44:59 => /home/lee/cpp/mrrpc/example/callee/userservice.cc:main:68
+16:53:4 =>[info] first log message!
+16:53:4 =>[info] /home/lee/cpp/mrrpc/example/callee/userservice.cc:main:68
+16:53:4 =>[info] service name: UserServiceRpc
+16:53:4 =>[info] method name: Login
+16:53:4 =>[info] method name: Register

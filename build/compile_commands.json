@@ -36,6 +36,12 @@
   "output": "src/CMakeFiles/mprpc.dir/mprpccontroller.cc.o"
 },
 {
+  "directory": "/home/lee/cpp/mrrpc/build/src",
+  "command": "/usr/bin/g++  -I/home/lee/cpp/mrrpc/src/include -I/home/lee/cpp/mrrpc/example -g -o CMakeFiles/mprpc.dir/logger.cc.o -c /home/lee/cpp/mrrpc/src/logger.cc",
+  "file": "/home/lee/cpp/mrrpc/src/logger.cc",
+  "output": "src/CMakeFiles/mprpc.dir/logger.cc.o"
+},
+{
   "directory": "/home/lee/cpp/mrrpc/build/example/callee",
   "command": "/usr/bin/g++  -I/home/lee/cpp/mrrpc/src/include -I/home/lee/cpp/mrrpc/example -g -o CMakeFiles/provider.dir/userservice.cc.o -c /home/lee/cpp/mrrpc/example/callee/userservice.cc",
   "file": "/home/lee/cpp/mrrpc/example/callee/userservice.cc",

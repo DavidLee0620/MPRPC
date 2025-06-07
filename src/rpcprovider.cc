@@ -2,6 +2,7 @@
 #include "mprpcapplication.h"
 #include <functional>
 #include "rpcheader.pb.h"
+#include "logger.h"
 using namespace std;
 
 /*
@@ -15,13 +16,15 @@ void RpcProvider::NotifyService(google::protobuf::Service *service)
     const google::protobuf::ServiceDescriptor *pserviceDesc=service->GetDescriptor();
     string service_name=pserviceDesc->name();
     int methodCnt=pserviceDesc->method_count();
-    cout<<"service name: "<<service_name<<endl;
+    //cout<<"service name: "<<service_name<<endl;
+    LOG_INFO("service name: %s",service_name.c_str());
     //获取服务对象指定下标的服务方法的描述 例如通过service->method->method_name->匹配到Login函数
     for(int i=0;i<methodCnt;i++)
     {
         const google::protobuf::MethodDescriptor* pmethodDesc=pserviceDesc->method(i);
         string method_name=pmethodDesc->name();
-        cout<<"method name: "<<method_name<<endl;
+        //cout<<"method name: "<<method_name<<endl;
+        LOG_INFO("method name: %s",method_name.c_str());
         service_info.m_methodMap.insert({method_name,pmethodDesc}); 
 
     }

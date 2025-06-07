@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "/home/lee/cpp/mrrpc/lib/libmprpc.a"
   "/home/lee/cpp/mrrpc/lib/libmprpc.pdb"
+  "CMakeFiles/mprpc.dir/logger.cc.o"
+  "CMakeFiles/mprpc.dir/logger.cc.o.d"
   "CMakeFiles/mprpc.dir/mprpcapplicaton.cc.o"
   "CMakeFiles/mprpc.dir/mprpcapplicaton.cc.o.d"
   "CMakeFiles/mprpc.dir/mprpcchannel.cc.o"
