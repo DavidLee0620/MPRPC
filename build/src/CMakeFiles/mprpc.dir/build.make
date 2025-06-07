@@ -167,6 +167,20 @@ src/CMakeFiles/mprpc.dir/logger.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/logger.cc.s"
 	cd /home/lee/cpp/mrrpc/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lee/cpp/mrrpc/src/logger.cc -o CMakeFiles/mprpc.dir/logger.cc.s
 
+src/CMakeFiles/mprpc.dir/zookeeperutil.cc.o: src/CMakeFiles/mprpc.dir/flags.make
+src/CMakeFiles/mprpc.dir/zookeeperutil.cc.o: /home/lee/cpp/mrrpc/src/zookeeperutil.cc
+src/CMakeFiles/mprpc.dir/zookeeperutil.cc.o: src/CMakeFiles/mprpc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lee/cpp/mrrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/CMakeFiles/mprpc.dir/zookeeperutil.cc.o"
+	cd /home/lee/cpp/mrrpc/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/zookeeperutil.cc.o -MF CMakeFiles/mprpc.dir/zookeeperutil.cc.o.d -o CMakeFiles/mprpc.dir/zookeeperutil.cc.o -c /home/lee/cpp/mrrpc/src/zookeeperutil.cc
+
+src/CMakeFiles/mprpc.dir/zookeeperutil.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mprpc.dir/zookeeperutil.cc.i"
+	cd /home/lee/cpp/mrrpc/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lee/cpp/mrrpc/src/zookeeperutil.cc > CMakeFiles/mprpc.dir/zookeeperutil.cc.i
+
+src/CMakeFiles/mprpc.dir/zookeeperutil.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/zookeeperutil.cc.s"
+	cd /home/lee/cpp/mrrpc/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lee/cpp/mrrpc/src/zookeeperutil.cc -o CMakeFiles/mprpc.dir/zookeeperutil.cc.s
+
 # Object files for target mprpc
 mprpc_OBJECTS = \
 "CMakeFiles/mprpc.dir/mprpcapplicaton.cc.o" \
@@ -175,7 +189,8 @@ mprpc_OBJECTS = \
 "CMakeFiles/mprpc.dir/rpcprovider.cc.o" \
 "CMakeFiles/mprpc.dir/mprpcchannel.cc.o" \
 "CMakeFiles/mprpc.dir/mprpccontroller.cc.o" \
-"CMakeFiles/mprpc.dir/logger.cc.o"
+"CMakeFiles/mprpc.dir/logger.cc.o" \
+"CMakeFiles/mprpc.dir/zookeeperutil.cc.o"
 
 # External object files for target mprpc
 mprpc_EXTERNAL_OBJECTS =
@@ -187,9 +202,10 @@ mprpc_EXTERNAL_OBJECTS =
 /home/lee/cpp/mrrpc/lib/libmprpc.a: src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o
 /home/lee/cpp/mrrpc/lib/libmprpc.a: src/CMakeFiles/mprpc.dir/mprpccontroller.cc.o
 /home/lee/cpp/mrrpc/lib/libmprpc.a: src/CMakeFiles/mprpc.dir/logger.cc.o
+/home/lee/cpp/mrrpc/lib/libmprpc.a: src/CMakeFiles/mprpc.dir/zookeeperutil.cc.o
 /home/lee/cpp/mrrpc/lib/libmprpc.a: src/CMakeFiles/mprpc.dir/build.make
 /home/lee/cpp/mrrpc/lib/libmprpc.a: src/CMakeFiles/mprpc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lee/cpp/mrrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library /home/lee/cpp/mrrpc/lib/libmprpc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lee/cpp/mrrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library /home/lee/cpp/mrrpc/lib/libmprpc.a"
 	cd /home/lee/cpp/mrrpc/build/src && $(CMAKE_COMMAND) -P CMakeFiles/mprpc.dir/cmake_clean_target.cmake
 	cd /home/lee/cpp/mrrpc/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mprpc.dir/link.txt --verbose=$(VERBOSE)
 
