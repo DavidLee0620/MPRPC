@@ -1,6 +1,7 @@
 #include <string>
 #include "mprpcconfig.h"
 #include <iostream>
+#include "logger.h"
 using namespace std;
 
 
@@ -10,7 +11,8 @@ void MprpcConfig::LoadConfigFile(const char* config_file)
     FILE *pf=fopen(config_file,"r");
     if(pf==nullptr)
     {
-        cout<<config_file<<"is not exist!"<<endl;
+        //cout<<config_file<<"is not exist!"<<endl;
+        LOG_INFO("%s is not exist!",config_file);
         exit(EXIT_FAILURE);
     }
     //1.注释 2.正确配置项 3.开头多余的空格

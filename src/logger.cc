@@ -31,7 +31,8 @@ Logger::Logger()
             FILE* pf=fopen(file_name,"a+");
             if(pf==nullptr)
             {
-                cout<<file_name<<"fopen error!"<<endl;
+                //cout<<file_name<<"fopen error!"<<endl;
+                LOG_ERROR("fopen error!");
                 exit(EXIT_FAILURE);
             }
             string msg=m_lckQue.pop();

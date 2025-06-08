@@ -298,4 +298,11 @@ src/CMakeFiles/mprpc.dir/zookeeperutil.cc.o: \
  /usr/include/google/protobuf/wire_format_lite.h \
  /usr/include/google/protobuf/io/zero_copy_stream_impl_lite.h \
  /usr/include/google/protobuf/stubs/stl_util.h \
- /home/lee/cpp/mrrpc/src/include/mprpccontroller.h
+ /home/lee/cpp/mrrpc/src/include/mprpccontroller.h \
+ /home/lee/cpp/mrrpc/src/include/logger.h \
+ /home/lee/cpp/mrrpc/src/include/lockqueue.h /usr/include/c++/11/queue \
+ /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_deque.h \
+ /usr/include/c++/11/bits/deque.tcc /usr/include/c++/11/bits/stl_queue.h \
+ /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
+ /usr/include/c++/11/bits/this_thread_sleep.h \
+ /usr/include/c++/11/condition_variable

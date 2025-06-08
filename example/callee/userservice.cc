@@ -9,14 +9,18 @@ class UserService:public fixbug::UserServiceRpc{ //rpc发布端（生产者）rp
 public:
     bool Login(string name,string pwd)
     {
-        cout<<"doing local service:Login"<<endl;
-        cout<<"name:"<<name<<" pwd:"<<pwd<<endl;
+        //cout<<"doing local service:Login"<<endl;
+        LOG_INFO("doing local service:Login");
+        //cout<<"name:"<<name<<" pwd:"<<pwd<<endl;
+        LOG_INFO("name:%s,pwd:%s",name.c_str(),pwd.c_str());
         return true;
     }
     bool Register(string name,string pwd,uint32_t id)
     {
-        cout<<"doing local service:Register"<<endl;
-        cout<<"name:"<<name<<" pwd:"<<pwd<<"id"<<id<<endl;
+        //cout<<"doing local service:Register"<<endl;
+        //cout<<"name:"<<name<<" pwd:"<<pwd<<"id"<<id<<endl;
+        LOG_INFO("doing local service:Register");
+        LOG_INFO("name:%s,pwd:%s,id:%d",name.c_str(),pwd.c_str(),id);
         return true;
     }
     //重写基类UserServiceRpc中的虚函数

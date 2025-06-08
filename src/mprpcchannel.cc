@@ -8,6 +8,7 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include "zookeeperutil.h"
+#include "logger.h"
 using namespace std;
 /*
 header_size+service_name method_name args_size+args_str
@@ -55,6 +56,15 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     send_rpc_str.insert(0,string((char*)&rpc_header_size,4));
     send_rpc_str+=rpc_header_str;
     send_rpc_str+=args_str;
+    LOG_INFO("=======================================");
+    LOG_INFO("header_size:%d",rpc_header_size);
+    LOG_INFO("rpc_header_str:%s",rpc_header_str.c_str());
+    LOG_INFO("service_name:%s",service_name.c_str());
+    LOG_INFO("method_name:%s",method_name.c_str());
+    LOG_INFO("args_size:%d",args_size);
+    LOG_INFO("args_str:%s",args_str.c_str());
+    LOG_INFO("=======================================");
+    /*
     cout<<"======================================="<<endl;
     cout<<"header_size:"<<rpc_header_size<<endl;
     cout<<"rpc_header_str:"<<rpc_header_str<<endl;
@@ -63,6 +73,7 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     cout<<"args_size:"<<args_size<<endl;
     cout<<"args_str:"<<args_str<<endl;
     cout<<"======================================="<<endl;
+    */
     //发送tcp请求
     int clientfd=socket(AF_INET,SOCK_STREAM,0);
     if(clientfd==-1)

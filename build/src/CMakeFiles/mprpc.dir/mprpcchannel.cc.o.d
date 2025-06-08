@@ -315,4 +315,11 @@ src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: \
  /usr/local/include/zookeeper/zookeeper_version.h \
  /usr/local/include/zookeeper/recordio.h \
  /usr/local/include/zookeeper/zookeeper.jute.h /usr/include/semaphore.h \
- /usr/include/x86_64-linux-gnu/bits/semaphore.h
+ /usr/include/x86_64-linux-gnu/bits/semaphore.h \
+ /home/lee/cpp/mrrpc/src/include/logger.h \
+ /home/lee/cpp/mrrpc/src/include/lockqueue.h /usr/include/c++/11/queue \
+ /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_deque.h \
+ /usr/include/c++/11/bits/deque.tcc /usr/include/c++/11/bits/stl_queue.h \
+ /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
+ /usr/include/c++/11/bits/this_thread_sleep.h \
+ /usr/include/c++/11/condition_variable

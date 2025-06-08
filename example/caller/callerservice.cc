@@ -1,7 +1,7 @@
 #include <iostream>
 #include "mprpcapplication.h"
 #include "user.pb.h"
-
+#include "logger.h"
 int main(int argc,char **argv)
 {
     //要想使用rpc服务，就应该先进行rpc框架的初始化
@@ -20,17 +20,21 @@ int main(int argc,char **argv)
     //通过controller控制信息判断序列化与网络发送和响应信息是否正确
     if(controller.Failed())
     {
-        cout<<"controller errText:"<<controller.ErrorText()<<endl;
+        //cout<<"controller errText:"<<controller.ErrorText()<<endl;
+        LOG_ERROR("controller errText:%s",controller.ErrorText().c_str());
     }
     else
     {
         if(response.result().errcode()==0)
         {
-            cout<<"rpc Login success: "<<response.success()<<endl;
+            //cout<<"rpc Login success: "<<response.success()<<endl;
+            LOG_INFO("rpc Login success:%d",response.success());
         }
         else
         {
-            cout<<"rpc Login errmsg: "<<response.result().errmsg()<<endl;
+            //cout<<"rpc Login errmsg: "<<response.result().errmsg()<<endl;
+            LOG_ERROR("rpc Login errmsg:%s",response.result().errmsg().c_str());
+            
         }
 
         //调用Register方法
@@ -42,11 +46,14 @@ int main(int argc,char **argv)
         stub.Register(nullptr,&req,&rsp,nullptr);
         if(rsp.result().errcode()==0)
         {
-            cout<<"rpc Register success: "<<rsp.success()<<endl;
+            //cout<<"rpc Register success: "<<rsp.success()<<endl;
+            LOG_INFO("rpc Register success:%d",rsp.success());
+
         }
         else
         {
-            cout<<"rpc Register errmsg: "<<rsp.result().errmsg()<<endl;
+            //cout<<"rpc Register errmsg: "<<rsp.result().errmsg()<<endl;
+            LOG_ERROR("rpc Register errmsg:%s",rsp.result().errmsg().c_str());
         }
 
     }

@@ -1,7 +1,7 @@
 #include "zookeeperutil.h"
 #include <iostream>
 #include "mprpcapplication.h"
-
+#include "logger.h"
 zkClient::zkClient():m_zhandle(nullptr)
 {
 
@@ -43,7 +43,8 @@ void zkClient::start()
     m_zhandle=zookeeper_init(connstr.c_str(),global_watcher,30000,nullptr,nullptr,0);
     if(m_zhandle==nullptr)
     {
-        cout<<"zookeeper_init error!"<<endl;
+        LOG_ERROR("zookeeper_init error!");
+        //cout<<"zookeeper_init error!"<<endl;
         exit(EXIT_FAILURE);
     }
     //创建信号量
@@ -53,7 +54,8 @@ void zkClient::start()
     zoo_set_context(m_zhandle,&sem);
     //阻塞等待信号量为1
     sem_wait(&sem);
-    cout<<"zookeeper_init success!"<<endl;
+    //cout<<"zookeeper_init success!"<<endl;
+    LOG_INFO("zookeeper_init success!");
 }
 
 void zkClient::Create(const char* path,const char* data,int datalen,int state)
@@ -69,13 +71,16 @@ void zkClient::Create(const char* path,const char* data,int datalen,int state)
         flag=zoo_create(m_zhandle,path,data,datalen,&ZOO_OPEN_ACL_UNSAFE,state,path_buffer,buffer_len);
         if(flag==ZOK)
         {
-            cout<<"znode create success...path: "<<path<<endl;
+            //cout<<"znode create success...path: "<<path<<endl;
+            LOG_INFO("znode create success...path: %s",path);
 
         }
         else
         {
-            cout<<"flag: "<<flag<<endl;
-            cout<<"znode create error...path: "<<path<<endl;
+            //cout<<"flag: "<<flag<<endl;
+            //cout<<"znode create error...path: "<<path<<endl;
+            LOG_ERROR("flag: %d",flag);
+            LOG_ERROR("znode create error...path: %s",path);
             exit(EXIT_FAILURE);
         }
     }
@@ -89,7 +94,8 @@ std::string zkClient::GetData(const char* path)
     int flag=zoo_get(m_zhandle,path,0,buffer,&bufferlen,nullptr);
     if(flag!=ZOK)
     {
-        cout<<"get Znode error...path: "<<path<<endl;
+        //cout<<"get Znode error...path: "<<path<<endl;
+        LOG_ERROR("get Znode error...path: %s",path);
         return "";
     }
     else
